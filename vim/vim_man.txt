@@ -1,0 +1,170 @@
+INSERTING MODE
+
+i - insert mode before the cursor
+I - insert mode start at the line
+a - append mode after the cursor
+A - append mode last at the line
+o - new line insert mode after the line
+O - new line inset mode before the lene  
+
+SAVING AND QUITING FILE
+:w - write the file
+:q - quite the fiel
+:q! - quite the file descard the changes
+:x - write and quite
+:reg - to see clipbord
+"<no>p - to past clipbord ex: "5p - past 5 no line
+
+Note: You can combine the commands ex: :wq - to write and quite the file
+Note : You can use all cmd with no
+		Small letters are always forword and CAPITAL letters are always backword.
+
+zz = to center the page move your cursor line at center
+. - for repeat command ex: dd. - delete the line and when you press . then the command will execute again how much you press the .
+
+*INDENTATION*
+== - auto indent line
+visuallneselection then == - indent multiple line
+
+*SEARCHING*
+SEARCHING FORWORD /
+/<search queary> - search in file and go there. and press n to move forword to next search queary, N for backword search queary.
+
+SEARCHING BACKWORD ?
+?<search queary> - search in file backword and got there. n move backword now, and N move forword now
+
+# - to search backword just by cursoring on that word
+? - to search forword just by cursoring on that word
+
+*SEARCHING AND REPLACEING*
+
+:%s/<word>/<replace with>/g - Seach and replace in all file
+select block then press :s/<wordl>/<replace with>/g - replace in selected block
+
+GO to the start of file
+gg - This is the most common command. Pressing g twice quickly will move your cursor to the first character of the very first line
+1G - Pressing the number 1 followed by a capital G has the same effect as gg.
+:1 - Entering :1 and pressing enter will move your cursor to the fist line. This works because you are telling Vim to go to line 1.
+[[ - Typing two open square brackets will also bring you to the start of the file.
+
+Go to the end of the file
+G - Pressing a capital G will move your cursor to the beginning of the last line of the file.
+G$ - If you want to move to the very last character of the last line, first pres G to get the last line, then press $ to jump to the end of that line.
+:$ - In command-line mode, typing :$ will take you to the last line.
+]] - Typing two closed square brackets will also move your cursor to the end of the file.
+
+MOVING CURSONR
+
+
+h - move cursor backword or left arroy key
+l - move cursor forword	or right arroy key
+j - jump on next line or down key 
+k - jump on previous line or up key
+w - jump to the next word with any sepration ex: this-is-a-senternce
+W - jump to the next word which have seprated with space
+b - jump backword
+B - jump to the backword which have seprated with space
+e/E - jumps end of the word
+0 - jumps start of the line
+$ - jumps end of the line
+ge - jumps to the end of the previous word
+% - jumps at brackets pair
+t<*> - jump before <*> ex: ty, t*, t/,etc.
+T<*> - jumps backword before <*>
+f<*> - jumps on that <*> ex: fy, f*, f<, f>, etc
+
+*MARKING AND JUMPING* 
+m<letter to mark> - first mark the function or line as a letter ex: ma - mark a at line which you are
+'<letter to jump> - jump on mark. ex: 'a - jumps where you mark a
+
+You can combine the cmds for just on perticular line.
+ex: 5j - jump 5 line down after the cursor
+ex: 5k - jump 5 line up after the cursor
+ex: 5l - jump 5 character after the cursor
+ex: 7h - jump 7 character before the cursor
+
+note there in no you can enter nay no you want to go at what position
+
+UNDO, REDO AND DELATION
+
+u - undo or <no>u to undo no of changes ex: 5u - undo 5 times
+ctrl+r - redo or <no>ctrl+r to redo no of changes ex: 3ctrl+r - redo 3 times
+
+View the undo history:
+	To see list of your undo history, which is structured like a tree, tyep :undolist and
+	press enter.
+
+	You cn navigate this tree with the commands :earlier and :later.
+
+Undo to a previous save
+	To revert the file to its last saved state, discard all unsaved edits by typing :e! and
+	pressing enter.
+
+DELETATON
+
+d - delete the selacted word, letter, or line, also you can delate multiple word using <no>d ex: 2d - delete 2 words
+dw - delete word
+daw - delete a word
+duw - delete under the word
+diw - delete in word
+dd - delete the whole line, <no>dd ex: 5dd -delete 5 line. also work as a cut
+D - delete rest of the line of all after the cursor
+d0 - delete line before the cursor
+d$ - delete line after the cursor
+d% - delete inside brackets with brackets.
+di" - delete in ""
+dt<*> - delete every thing up to <*>
+
+
+CHANGING THE LINE
+
+cc - change line
+c - change the word
+C - to change after the cursor
+ciw - change in word
+ci" - change in "" quatation marks ex: "Hello Horld" you can change is using ci" and the change the sentense
+ci' - same as ci" but quatation marks will changed
+ci(/ci) - change indide bracket also you can change in [], {}, (), <>, etc.
+
+*VISUAL MODE*
+
+v - visual mode
+y - yanking means copy the selected text
+Y - yanking the line means copy the line.
+yi" - Same as changing inside "" this will copy inside the ""
+yi( - same as yi"
+yt<*> - copy upto <*>
+
+p - past the copied text, you can past upto no using <no>p ex: 10p - past 10 time
+
+	Note: P - captial P for past above the cursor line.
+
+*REPLACING*
+r - replace the character and the character to add ex: to change c with b use r then b and enter.
+
+VISUAL LINE MODE
+V - visual line mode
+
+VISUAL BLOCK MODE
+left ctrl+v -visual block mode
+
+*MICROS*
+RECORDING MICRO - q<microletter> now micro start recording
+					ex: qa d3wA 100 [esc] and then press q
+
+USING MICRO - @<letter> to use that micto
+
+
+VIM CONFIGURATION
+
+vim configuration file path: ~/.vimrc - configuare your vim settings
+
+:colorscheme - to change color scheme
+:set relativenumber - to on relative no
+:set number - to on numbers
+:set mouse=a - to enable mouse clicking
+:set tabstop=<value> - to set tab size
+
+VIM PLUGINS
+
+
